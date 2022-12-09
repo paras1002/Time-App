@@ -1,0 +1,94 @@
+INSERT INTO customer VALUES(101,'Rupesh Dev Mand','Male','rupesh01@gmail.com',6518734985,'abc1238jb');
+
+INSERT INTO customer VALUES(102,'Jobin Radhe Rajagopal','Male','jobin02@gmail.com',6128219987,'#4@hgyr0');
+
+INSERT INTO customer VALUES(103,'Kajal Malhotra','Female','kajal03@yahoo.com',6411017992,'*+451kui;');
+
+INSERT INTO customer VALUES(104,'Samir Kumar','Male','samir04@gmail.com',6218461723,'Iunm890?');
+
+INSERT INTO customer VALUES(105,'Upasana Pandit','Female','upasana05@yahoo.com',7979084959,'@#tyh678');
+
+INSERT INTO customer VALUES(106,'Kirti Choudhry','Female','kirti06@gmail.com',6809670819,'$%@uijm8');
+
+INSERT INTO customer VALUES(107,'Prabhat Sangha','Male','prabhat07@yahoo.com',8917659281,'()874jukm');
+
+INSERT INTO customer VALUES(108,'Sheetal Nayar','Female','sheetal08@gmail.com',6127982334,'=%^hgbt54');
+
+
+
+
+INSERT INTO driver VALUES('D101','PB7028718','Manpreet Singh',7136768490,'manpreet01@gmail.com',4.7);
+
+INSERT INTO driver VALUES('D102','MH4478223','Yogesh Sharma',9799900889,'yogesh02@yahoo.com',5);
+
+INSERT INTO driver VALUES('D103','HR9312538','Sanjana Garg',6127993561,'sanjana03@gmail.com',4.4);
+
+INSERT INTO driver VALUES('D104','HR3077002','Yash',8917258098,'yash04@gmail.com',4);
+
+INSERT INTO driver VALUES('D105','DL8542285','Vishal Gupta',7887916490,'vishal05@gmail.com',3.9);
+
+INSERT INTO driver VALUES('D106','CH2967725','Bhavna Garg',7284278815,'bhavna06@yahoo.com',4.9);
+
+
+
+
+INSERT INTO ride VALUES('R101',101,'Nabha','Patiala',to_date('12-04-2021','dd-mm-yyyy'),to_char(to_date('1325','hh24mi'),'hh24:mi'),30,'D101');
+
+INSERT INTO ride VALUES('R102',105,'Pune','Navi Mumbai',to_date('12-04-2021','dd-mm-yyyy'),to_char(to_date('1900','hh24mi'),'hh24:mi'),126,'D102');
+
+INSERT INTO ride VALUES('R103',103,'Panchkula','New Delhi',to_date('09-05-2021','dd-mm-yyyy'),to_char(to_date('1830','hh24mi'),'hh24:mi'),260,'D105');
+
+INSERT INTO ride VALUES('R104',102,'Gurgaon','New Delhi',to_date('10-05-2021','dd-mm-yyyy'),to_char(to_date('0955','hh24mi'),'hh24:mi'),30,'D104');
+
+INSERT INTO ride VALUES('R105',105,'Patiala','Rajpura',to_date('11-05-2021','dd-mm-yyyy'),to_char(to_date('1900','hh24mi'),'hh24:mi'),34,'D101');
+
+INSERT INTO ride VALUES('R106',104,'Panchkula','Chandigarh',to_date('12-05-2021','dd-mm-yyyy'),to_char(to_date('1415','hh24mi'),'hh24:mi'),12,'D103');
+
+
+
+
+
+INSERT INTO payment VALUES('P101','R101',101,1000.0);
+
+INSERT INTO payment VALUES('P102','R102',105,1549.23);
+
+INSERT INTO payment VALUES('P103','R103',103,1863.80);
+
+INSERT INTO payment VALUES('P104','R104',102,2000.50);
+
+INSERT INTO payment VALUES('P105','R105',105,1250.0);
+
+INSERT INTO payment VALUES('P106','R106',104,830.65);
+
+
+
+
+INSERT INTO taxi VALUES('PB11CY4512','Altroz','Hatchback','D101');
+
+INSERT INTO taxi VALUES('MH12TS2154','Harrier','SUV','D102');
+
+INSERT INTO taxi VALUES('HR03Z7842','Swift Dzire','Sedan','D103');
+
+INSERT INTO taxi VALUES('HR72C3298','Grand i10','Hatchback','D104');
+
+INSERT INTO taxi VALUES('DL7CQ1939','Aura','Sedan','D105');
+
+INSERT INTO taxi VALUES('CH01CF8561','Vitara Brezza','Crossover','D106');
+
+INSERT INTO taxi(regis_number,model,vehicle_type) VALUES('MH01DX6427','Fortuner','SUV');
+
+
+
+
+
+INSERT INTO feedback VALUES('D101',101,'R101',4);
+
+INSERT INTO feedback VALUES('D102',105,'R102',4);
+
+INSERT INTO feedback VALUES('D105',103,'R103',4);
+
+INSERT INTO feedback VALUES('D104',102,'R104',3);
+
+INSERT INTO feedback VALUES('D101',105,'R105',4);
+
+INSERT INTO feedback VALUES('D103',104,'R106',5);

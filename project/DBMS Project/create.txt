@@ -1,0 +1,16 @@
+CREATE TABLE customer(cid INT,name VARCHAR(25) NOT NULL,gender VARCHAR(6) NOT NULL,email VARCHAR(40) NOT NULL CHECK (email like '%@%'),phone NUMBER(10) CHECK (LENGTH(phone)=10),password VARCHAR(15),CONSTRAINT cust_id PRIMARY KEY(cid));
+
+CREATE TABLE driver(d_id VARCHAR(10),license VARCHAR(15),name VARCHAR(25) NOT NULL,phone NUMBER(10) CHECK (LENGTH(phone)=10),mail VARCHAR(40) NOT NULL CHECK (mail like '%@%'),overall_rating NUMBER(2,1),CONSTRAINT driver_id PRIMARY KEY(d_id));
+
+CREATE TABLE ride(rid VARCHAR(10),cid INT,pickup_loc VARCHAR(50) NOT NULL,dropoff_loc VARCHAR(50) NOT NULL,ride_date DATE,time VARCHAR(10),distance INT,d_id VARCHAR(10),CONSTRAINT ride_id PRIMARY KEY(rid),CONSTRAINT cust_id1 FOREIGN KEY(cid) REFERENCES customer(cid),CONSTRAINT driver_id1 FOREIGN KEY(d_id) REFERENCES driver(d_id));
+
+[insert time--> insert into emp(empno,ename) values(122,to_char(to_date('1700','hh24mi'),'hh24:mi:ss')); ]
+							|____________________________________________|
+									    time
+
+
+CREATE TABLE payment(pid VARCHAR(10),rid VARCHAR(10),cid INT,amount NUMBER(10,2),CONSTRAINT pay_id PRIMARY KEY(pid),CONSTRAINT ride_id1 FOREIGN KEY(rid) REFERENCES ride(rid),CONSTRAINT cust_id2 FOREIGN KEY(cid) REFERENCES customer(cid));
+
+CREATE TABLE taxi(regis_number VARCHAR(12),model VARCHAR(20),vehicle_type VARCHAR(10),d_id VARCHAR(10),CONSTRAINT regis_no PRIMARY KEY(regis_number),CONSTRAINT driver_id2 FOREIGN KEY(d_id) REFERENCES driver(d_id));
+
+CREATE TABLE feedback(d_id VARCHAR(10),cid INT,rid VARCHAR(10),ride_rating NUMBER(1),CONSTRAINT driver_id3 FOREIGN KEY(d_id) REFERENCES driver(d_id),CONSTRAINT cust_id3 FOREIGN KEY(cid) REFERENCES customer(cid),CONSTRAINT ride_id2 FOREIGN KEY(rid) REFERENCES ride(rid));
